@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
 import HandyMan from './HandyMan'
 import TestComponent from './TestComponent'
+import JobPosting from './JobPosting'
 
 const App = () => {
   return ( 
@@ -17,12 +18,16 @@ const App = () => {
         <li>
           <Link to="/topics">Topics</Link>
         </li>
+        <li>
+          <Link to="/jobPosting">Job Postings</Link>
+        </li>
       </ul>
 
       <hr />
 
       <Route exact path="/" component={HandyMan} />
       <Route path="/about"  component={TestComponent}/>
+      <Route path="/jobPosting" component={JobPosting}/>
       
     </div>
   </Router>
