@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
 import HandyManList from './HandyManList';
 import Home from './Home';
 import TestComponent from './TestComponent'
+import JobPosting from './JobPosting'
 
 const App = () => {
   return ( 
@@ -18,12 +19,16 @@ const App = () => {
         <li>
           <Link to="/handymen">Handymen</Link>
         </li>
+        <li>
+          <Link to="/jobPosting">Job Postings</Link>
+        </li>
       </ul>
 
       <hr />
 
       <Route exact path="/" component={Home} />
       <Route path="/about"  component={TestComponent}/>
+      <Route path="/jobPosting" component={JobPosting}/>
       <Route path="/handymen" component={HandyManList} />
       
     </div>
