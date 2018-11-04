@@ -35,6 +35,7 @@ export class HandyMan extends Component {
                             <p>Description: {this.props.handyMan.body}</p>
                             <p>Email: {this.props.handyMan.email}</p>
                             <p>Created at: {JSON.stringify(this.props.handyMan.dateCreated)}</p>
+
                         </Typography>
                         </CardContent>
                     </CardActionArea>

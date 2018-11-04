@@ -12,7 +12,9 @@ class HandyManList extends Component {
                 { id:2, handyManName: 'Rameen', dateCreated: new Date(), handyManTitle: 'Software Engineer', body: 'React Dev.', email: 'RameenRastan@gmail.com'},
                 { id:3, handyManName: 'Jared', dateCreated: new Date(), handyManTitle: 'Coder', body: 'React Noob.', email: 'jaredWoo@live.ca'},
                 { id:4, handyManName: 'Wilson', dateCreated: new Date(), handyManTitle: 'Hacker', body: 'React noob', email: 'wilsonla@live.ca'}
+
             ],
+            filterType: ""
         };
         this.handleFilterSearch = this.handleFilterSearch.bind(this)
     }
@@ -21,6 +23,10 @@ class HandyManList extends Component {
         this.setState({
             searchString: e.target.value
         })
+    }
+
+    handleFilterType() {
+
     }
 
     render() {
