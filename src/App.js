@@ -1,35 +1,24 @@
 import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
-import HandyMan from './HandyMan'
+import Navbar from './Navbar'
 import TestComponent from './TestComponent'
 import Registration from './Registration';
 import RegistrationForm from './Registration';
 import CustomerRegistration from './CustomerRegistration';
+import {TextButtons} from './Navbar'
+import HandyManList from './HandyManList';
+import Home from './Home';
+import JobPosting from './JobPosting'
 
 const App = () => {
   return ( 
-    <Router>
+    <Router> 
     <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/topics">Topics</Link>
-        </li>
-        <li>
-          <Link to="/registration">Registration</Link>
-        </li>
-      </ul>
-
-      <hr />
-
-      <Route exact path="/" component={HandyMan} />
+      <Navbar />
+      <Route exact path="/" component={Home} />
       <Route path="/about"  component={TestComponent}/>
-      <Route path="/registration" component={Registration} />
+      <Route path="/jobPosting" component={JobPosting}/>
+      <Route path="/handymen" component={HandyManList} />
       
     </div>
   </Router>
