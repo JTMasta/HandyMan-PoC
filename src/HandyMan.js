@@ -21,7 +21,7 @@ export class HandyMan extends Component {
                     <CardActionArea>
                         <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
-                            {this.props.handyMan.handyManTitle} <Avatar>HandyMan</Avatar>
+                            {this.props.handyMan.handyManTitle} <Avatar>H</Avatar>
                         </Typography>
                         <Typography component="p">
                             <p>Name: {this.props.handyMan.handyManName}</p>
