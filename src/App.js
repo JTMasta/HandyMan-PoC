@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
-import HandyMan from './HandyMan'
+import Navbar from './Navbar'
 import TestComponent from './TestComponent'
-import {TextButtons} from './HandyMan'
+import {TextButtons} from './Navbar'
 
 const App = () => {
   return ( 
     <Router>
      <div>
     
-      <HandyMan />
+      <Navbar />
       <Route path="/about"  component={TestComponent}/>
       
     </div>
