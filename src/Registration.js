@@ -8,7 +8,7 @@ import { withStyles } from '@material-ui/core';
 const styles = theme => ({
     button: {
         padding: "10px",
-        margin: "5px"
+        margin: "20px"
     }
 });
 
@@ -41,6 +41,7 @@ class RegistrationForm extends Component {
                 className={classes.button}>
                     Customer
                 </Button>
+                
                 <Button onClick={this.swtichStateToHandyman} 
                 variant="contained" 
                 color="secondary"
