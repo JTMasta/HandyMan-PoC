@@ -14,7 +14,5 @@
 }
 
 .registrationbuttons {
-    position: fixed;
-    margin: auto;
-    left: 34%
+    text-align: center
 }

@@ -12,7 +12,7 @@ const styles = theme => ({
         marginRight: theme.spacing.unit,
         marginTop: 3 * theme.spacing.unit,
         width: 250,
-        height: 100
+        height: 80
     }
 });
 
