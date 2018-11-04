@@ -25,10 +25,15 @@ class JobPosting extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            currentJob: null,
+            editTitle: '',
+            editName: '',
+            editAddress: '',
             title: '',
             name: '',
             address: '',
             form_dialog_open: false,
+            edit_form_dialog_open: false,
             currentId: 3,
             jobListing: [
                 { title: "Plumber", name: "John Clooney", address: "4029 Rue Saguenay", id: 1},
@@ -36,12 +41,36 @@ class JobPosting extends Component {
             ]
         }
 
+        this.handleEditTitleChange = this.handleEditTitleChange.bind(this)
+        this.handleEditNameChange = this.handleEditNameChange.bind(this)
+        this.handleEditAddressChange = this.handleEditAddressChange.bind(this)
         this.handleTitleChange = this.handleTitleChange.bind(this)
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handleAddressChange = this.handleAddressChange.bind(this)
         this.openDialog = this.openDialog.bind(this)
         this.handleCloseSubmit = this.handleCloseSubmit.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+        this.openEditDialog = this.openEditDialog.bind(this)
+        this.handleCloseEditSubmit = this.handleCloseEditSubmit.bind(this)
+
+    }
+
+    handleEditTitleChange(e) {
+        this.setState({
+            editTitle: e.target.value
+        })
+    }
+
+    handleEditNameChange(e) {
+        this.setState({
+            editName: e.target.value
+        })
+    }
+
+    handleEditAddressChange(e) {
+        this.setState({
+            editAddress: e.target.value
+        })
     }
 
     handleTitleChange(e) {
@@ -67,7 +96,12 @@ class JobPosting extends Component {
             form_dialog_open: true
         })
     }
-
+    openEditDialog(data){
+        this.setState({
+            edit_form_dialog_open: true,
+            currentJob: data
+        })
+    }
     handleCloseSubmit = () => {
                 //e.preventDefault();
         const job = {
@@ -83,6 +117,30 @@ class JobPosting extends Component {
         })
         this.setState({ form_dialog_open: false });
       };
+    
+    handleCloseEditSubmit = () => {
+        
+        const editedListing = this.state.jobListing.map(posting => {
+            if(posting.id === this.state.currentJob.id)
+            {
+                return {
+                    id: this.state.currentJob.id,
+                    title: this.state.editTitle,
+                    name: this.state.editName,
+                    address: this.state.editAddress
+                }
+            }
+            else
+            {
+                return posting
+            }
+        })
+
+        this.setState({
+            jobListing: editedListing,
+            edit_form_dialog_open: false
+        })
+      };
 
     handleClose = () => {
         this.setState({ form_dialog_open: false });
@@ -95,6 +153,7 @@ class JobPosting extends Component {
            jobListing: removed
         })
     }
+
     render() {
 
         return (
@@ -108,8 +167,8 @@ class JobPosting extends Component {
                                     {data.title}
                                 </Typography>
                                 <Typography component="p">
-                                    Name: {data.name}
-                                    Address: {data.address}
+                                    <p>Name: {data.name}</p>
+                                    <p>Address: {data.address}</p>
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -117,7 +176,7 @@ class JobPosting extends Component {
                             <Button size="small" color="primary">
                             Share
                             </Button>
-                            <Button size="small" color="primary">
+                            <Button size="small" color="primary"  onClick={() => {this.openEditDialog(data)}}>
                             Edit
                             </Button>
                             <IconButton aria-label="Delete" onClick={()=> this.handleDelete(data)}>
@@ -131,7 +190,33 @@ class JobPosting extends Component {
                         <Button onClick={this.openDialog} variant="fab" color="primary" aria-label="Add"><AddIcon /></Button>
                     </CardActions>
                 </Card>
-                
+                <Dialog
+                    open={this.state.edit_form_dialog_open}
+                    onClose={this.handleClose}
+                    aria-labelledby="edit-form-dialog-title"
+                >
+                    <DialogTitle id="edit-form-dialog-title">Edit Job Posting:</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            Enter job details:
+                        </DialogContentText>
+                        <br />
+                        <Input placeholder={this.state.currentJob ? this.state.currentJob.title : null} value={this.state.editTitle} onChange={this.handleEditTitleChange} inputProps={{'aria-label': 'Description',}} ></Input>
+                        <br /><br />
+                        <Input  placeholder={this.state.currentJob ? this.state.currentJob.name : null} value={this.state.editName} onChange={this.handleEditNameChange} inputProps={{'aria-label': 'Description',}}></Input>
+                        <br /><br />
+                        <Input  placeholder={this.state.currentJob ? this.state.currentJob.address : null} value={this.state.editAddress} onChange={this.handleEditAddressChange} inputProps={{'aria-label': 'Description',}}></Input>
+                    
+                    </DialogContent>
+                    <DialogActions>
+                    <Button onClick={this.handleClose} color="primary">
+                            Cancel
+                    </Button>
+                        <Button onClick ={this.handleCloseEditSubmit} color="primary">
+                            Submit
+                    </Button>
+                    </DialogActions>
+                </Dialog>
                 <Dialog
                     open={this.state.form_dialog_open}
                     onClose={this.handleClose}
