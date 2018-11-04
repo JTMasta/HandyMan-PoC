@@ -16,6 +16,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
     root: {
@@ -89,10 +90,15 @@ const styles = theme => ({
 });
 
 class PrimarySearchAppBar extends React.Component {
-    state = {
-        anchorEl: null,
-        mobileMoreAnchorEl: null,
-    };
+    constructor(props)
+    {
+        super(props)
+        this.state = {
+            type: "customer",
+            anchorEl: null,
+            mobileMoreAnchorEl: null,
+        };
+    }
 
     handleProfileMenuOpen = event => {
         this.setState({ anchorEl: event.currentTarget });
@@ -172,11 +178,18 @@ class PrimarySearchAppBar extends React.Component {
                         </IconButton>
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>
                             HandyMan
-            </Typography>
-
+                        </Typography>
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-                            View Job Listings
-            </Typography>
+                            {this.state.type === "customer" ? 
+                            <Link to="/handymen">
+                                View Handymen
+                            </Link>
+                            :
+                            <Link to="/jobposting">
+                                View My Posts
+                            </Link>
+                            }
+                        </Typography>
                         <div className={classes.grow} />
                         <div
                             anchorEl={anchorEl}
