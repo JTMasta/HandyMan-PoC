@@ -13,7 +13,7 @@ class HandyManList extends Component {
                 { id: 1, handyManName: 'Owen', dateCreated: new Date(), handyManTitle: 'Network Engineer', body: 'Network Engineer and currently single.', email: 'Owenli@gmail.com', distance: 25 },
                 { id: 2, handyManName: 'Rameen', dateCreated: new Date(), handyManTitle: 'Software Engineer', body: 'React Dev.', email: 'RameenRastan@gmail.com', distance: 70 },
                 { id: 3, handyManName: 'Jared', dateCreated: new Date(), handyManTitle: 'Coder', body: 'React Noob.', email: 'jaredWoo@live.ca', distance: 100 },
-                { id: 4, handyManName: 'Wilson', dateCreated: new Date(), handyManTitle: 'Hacker', body: 'React noob', email: 'wilsonla@live.ca', distance: 50 }
+                { id: 4, handyManName: 'Wilson', dateCreated: new Date(), handyManTitle: 'Hacker', body: 'React noob', email: 'wilsonla@live.ca', distance: 50 },
                 { id:5, handyManName: 'Kevin', dateCreated: new Date(), handyManTitle: 'Rose Clipper', body: 'Local Florist', email: 'roses@live.ca'}
 
             ],
