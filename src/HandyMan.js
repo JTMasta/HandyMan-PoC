@@ -34,6 +34,7 @@ export class HandyMan extends Component {
                             <p>HandyMan Title: {this.props.handyMan.handyManTitle}</p>
                             <p>Description: {this.props.handyMan.body}</p>
                             <p>Email: {this.props.handyMan.email}</p>
+                            <p>Distance: {this.props.handyMan.distance} km</p>
                             <p>Created at: {JSON.stringify(this.props.handyMan.dateCreated)}</p>
 
                         </Typography>

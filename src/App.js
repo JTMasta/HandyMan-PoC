@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
 import Navbar from './Navbar'
 import TestComponent from './TestComponent'
-import Registration from './Registration';/
+import Registration from './Registration';
 import RegistrationForm from './Registration';
 import CustomerRegistration from './CustomerRegistration';
 import {TextButtons} from './Navbar'
