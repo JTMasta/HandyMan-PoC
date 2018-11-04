@@ -39,14 +39,14 @@ class RegistrationForm extends Component {
             <div>
                 <Button onClick={this.swtichStateToCustomer}
                     variant="contained"
-                    color="secondary"
+                    color="primary"
                     className={classes.button}>
                     Customer
                 </Button>
 
                 <Button onClick={this.swtichStateToHandyman}
                     variant="contained"
-                    color="secondary"
+                    color="primary"
                     className={classes.button} >
                     Handyman
                 </Button>
