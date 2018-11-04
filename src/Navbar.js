@@ -99,7 +99,7 @@ class PrimarySearchAppBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            type: "customer",
+            type: "handyman",
             anchorEl: null,
             mobileMoreAnchorEl: null,
         };

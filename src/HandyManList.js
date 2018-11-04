@@ -7,13 +7,32 @@ class HandyManList extends Component {
     constructor(props) {
         super(props)
         this.state = {
+<<<<<<< HEAD
             searchString: '',
             distance: 50,
+||||||| merged common ancestors
+            searchString: '',
+=======
+            searchString: this.props.searchString || '',
+>>>>>>> f672149bf3cf260cbc53d09012589a6a552c14d2
             handyManList: [
+<<<<<<< HEAD
                 { id: 1, handyManName: 'Owen', dateCreated: new Date(), handyManTitle: 'Network Engineer', body: 'Network Engineer and currently single.', email: 'Owenli@gmail.com', distance: 25 },
                 { id: 2, handyManName: 'Rameen', dateCreated: new Date(), handyManTitle: 'Software Engineer', body: 'React Dev.', email: 'RameenRastan@gmail.com', distance: 70 },
                 { id: 3, handyManName: 'Jared', dateCreated: new Date(), handyManTitle: 'Coder', body: 'React Noob.', email: 'jaredWoo@live.ca', distance: 100 },
                 { id: 4, handyManName: 'Wilson', dateCreated: new Date(), handyManTitle: 'Hacker', body: 'React noob', email: 'wilsonla@live.ca', distance: 50 }
+||||||| merged common ancestors
+                { id:1, handyManName: 'Owen', dateCreated: new Date(), handyManTitle: 'Network Engineer', body: 'Network Engineer and currently single.', email: 'Owenli@gmail.com'},
+                { id:2, handyManName: 'Rameen', dateCreated: new Date(), handyManTitle: 'Software Engineer', body: 'React Dev.', email: 'RameenRastan@gmail.com'},
+                { id:3, handyManName: 'Jared', dateCreated: new Date(), handyManTitle: 'Coder', body: 'React Noob.', email: 'jaredWoo@live.ca'},
+                { id:4, handyManName: 'Wilson', dateCreated: new Date(), handyManTitle: 'Hacker', body: 'React noob', email: 'wilsonla@live.ca'}
+=======
+                { id:1, handyManName: 'Owen', dateCreated: new Date(), handyManTitle: 'Network Engineer', body: 'Network Engineer and currently single.', email: 'Owenli@gmail.com'},
+                { id:2, handyManName: 'Rameen', dateCreated: new Date(), handyManTitle: 'Software Engineer', body: 'React Dev.', email: 'RameenRastan@gmail.com'},
+                { id:3, handyManName: 'Jared', dateCreated: new Date(), handyManTitle: 'Coder', body: 'React Noob.', email: 'jaredWoo@live.ca'},
+                { id:4, handyManName: 'Wilson', dateCreated: new Date(), handyManTitle: 'Hacker', body: 'React noob', email: 'wilsonla@live.ca'},
+                { id:5, handyManName: 'car', dateCreated: new Date(), handyManTitle: 'carman', body: 'car noob', email: 'car@live.ca'}
+>>>>>>> f672149bf3cf260cbc53d09012589a6a552c14d2
 
             ],
             filterType: "name"
