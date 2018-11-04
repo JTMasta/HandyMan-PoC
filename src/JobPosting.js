@@ -108,8 +108,8 @@ class JobPosting extends Component {
                                     {data.title}
                                 </Typography>
                                 <Typography component="p">
-                                    <p>Name: {data.name}</p>
-                                    <p>Address: {data.address}</p>
+                                    Name: {data.name}
+                                    Address: {data.address}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -121,7 +121,7 @@ class JobPosting extends Component {
                             Edit
                             </Button>
                             <IconButton aria-label="Delete" onClick={()=> this.handleDelete(data)}>
-                            <DeleteIcon fontSize="medium" />
+                            <DeleteIcon fontSize="default" />
                             </IconButton>
                         </CardActions>
                     </Card>
@@ -151,7 +151,7 @@ class JobPosting extends Component {
                     
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={this.handleClose} color="primary">
+                    <Button onClick={this.handleClose} color="primary">
                             Cancel
                     </Button>
                         <Button onClick ={this.handleCloseSubmit} color="primary">
