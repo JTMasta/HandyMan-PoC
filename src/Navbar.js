@@ -19,6 +19,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import { Link } from 'react-router-dom';
 
 const styles = theme => ({
+    
     root: {
         width: '100%',
     },
@@ -90,13 +91,12 @@ const styles = theme => ({
 });
 
 const linkStyle = {
-    color: 'white', 
+    color: 'white',
     textDecoration: 'none'
 }
 
 class PrimarySearchAppBar extends React.Component {
-    constructor(props)
-    {
+    constructor(props) {
         super(props)
         this.state = {
             type: "customer",
@@ -151,7 +151,7 @@ class PrimarySearchAppBar extends React.Component {
             >
                 <MenuItem>
                     <IconButton color="inherit">
-                        <Badge badgeContent color="secondary">
+                        <Badge badgeContent={1} color="secondary">
                             <MailIcon />
                         </Badge>
                     </IconButton>
@@ -159,7 +159,7 @@ class PrimarySearchAppBar extends React.Component {
                 </MenuItem>
                 <MenuItem>
                     <IconButton color="inherit">
-                        <Badge badgeContent={0} color="secondary">
+                        <Badge badgeContent={2} color="secondary">
                             <NotificationsIcon />
                         </Badge>
                     </IconButton>
@@ -183,17 +183,17 @@ class PrimarySearchAppBar extends React.Component {
                         </IconButton>
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>
                             <Link to="/" style={linkStyle}>
-                            HandyMan
+                                HandyMan
                             </Link>
                         </Typography>
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-                            {this.state.type === "customer" ? 
-                            <Link to="/handymen" style={linkStyle}>
-                                View Handymen
+                            {this.state.type === "customer" ?
+                                <Link to="/handymen" style={linkStyle}>
+                                    View Handymen
                             </Link>
-                            :
-                            <Link to="/jobposting">
-                                View My Posts
+                                :
+                                <Link to="/jobposting" style={linkStyle}>
+                                    View My Posts
                             </Link>
                             }
                         </Typography>
@@ -216,12 +216,12 @@ class PrimarySearchAppBar extends React.Component {
                         </div>
                         <div className={classes.sectionDesktop}>
                             <IconButton color="inherit">
-                                <Badge badgeContent={0} color="secondary">
+                                <Badge badgeContent={1} color="secondary">
                                     <MailIcon />
                                 </Badge>
                             </IconButton>
                             <IconButton color="inherit">
-                                <Badge badgeContent={0} color="secondary">
+                                <Badge badgeContent={2} color="secondary">
                                     <NotificationsIcon />
                                 </Badge>
                             </IconButton>
