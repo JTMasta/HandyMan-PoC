@@ -89,6 +89,11 @@ const styles = theme => ({
     },
 });
 
+const linkStyle = {
+    color: 'white', 
+    textDecoration: 'none'
+}
+
 class PrimarySearchAppBar extends React.Component {
     constructor(props)
     {
@@ -177,11 +182,13 @@ class PrimarySearchAppBar extends React.Component {
                             <MenuIcon />
                         </IconButton>
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+                            <Link to="/" style={linkStyle}>
                             HandyMan
+                            </Link>
                         </Typography>
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>
                             {this.state.type === "customer" ? 
-                            <Link to="/handymen">
+                            <Link to="/handymen" style={linkStyle}>
                                 View Handymen
                             </Link>
                             :
