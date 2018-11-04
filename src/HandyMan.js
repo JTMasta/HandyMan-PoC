@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
+import { CardActions } from '@material-ui/core';
+import Icon from '@material-ui/core/Icon';
 
 
 export class HandyMan extends Component {
@@ -14,6 +16,10 @@ export class HandyMan extends Component {
     {
         super(props)
     }
+    handleSend = () => {
+        console.log("hello")
+        window.location.href = `mailto:${this.props.handyMan.email}`
+    }   
     render() { 
         return (
             <div>
@@ -27,10 +33,18 @@ export class HandyMan extends Component {
                             <p>Name: {this.props.handyMan.handyManName}</p>
                             <p>HandyMan Title: {this.props.handyMan.handyManTitle}</p>
                             <p>Description: {this.props.handyMan.body}</p>
+                            <p>Email: {this.props.handyMan.email}</p>
                             <p>Created at: {JSON.stringify(this.props.handyMan.dateCreated)}</p>
                         </Typography>
                         </CardContent>
                     </CardActionArea>
+                    <CardActions>
+                        <Typography>
+                        <Button variant="contained" color="primary" onClick={this.handleSend}>
+                            contact
+                        </Button>
+                        </Typography>
+                    </CardActions>
                 </Card>
             </div>
         )
