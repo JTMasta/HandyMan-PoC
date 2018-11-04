@@ -8,11 +8,12 @@ class HandyManList extends Component {
         this.state = {
             searchString: '',
             handyManList: [
-                { id:1, handyManName: 'Owen', dateCreated: new Date(), handyManTitle: 'Network Engineer', body: 'Network Engineer and currently single.'},
-                { id:2, handyManName: 'Rameen', dateCreated: new Date(), handyManTitle: 'Software Engineer', body: 'React Dev.'},
-                { id:3, handyManName: 'Jared', dateCreated: new Date(), handyManTitle: 'Coder', body: 'React Noob.'},
-                { id:4, handyManName: 'Wilson', dateCreated: new Date(), handyManTitle: 'Hacker', body: 'React noob'}
+                { id:1, handyManName: 'Owen', dateCreated: "6:55PM November 3, 2018" , handyManTitle: 'Network Engineer', body: 'Network Engineer and currently single.'},
+                { id:2, handyManName: 'Rameen', dateCreated: "6:40PM November 3, 2018", handyManTitle: 'Software Engineer', body: 'React Dev.'},
+                { id:3, handyManName: 'Jared', dateCreated: "6:35PM November 3, 2018", handyManTitle: 'Coder', body: 'React Noob.'},
+                { id:4, handyManName: 'Wilson', dateCreated: "6:25PM November 3, 2018", handyManTitle: 'Hacker', body: 'React noob'}
             ],
+            filterType: ""
         };
         this.handleFilterSearch = this.handleFilterSearch.bind(this)
     }
@@ -21,6 +22,10 @@ class HandyManList extends Component {
         this.setState({
             searchString: e.target.value
         })
+    }
+
+    handleFilterType() {
+
     }
 
     render() {
