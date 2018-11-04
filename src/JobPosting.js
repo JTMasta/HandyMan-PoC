@@ -11,6 +11,15 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import Avatar from '@material-ui/core/Avatar';
+import default_picture from './default_picture.jpg';
+
 
 class JobPosting extends Component {
     constructor(props) {
@@ -86,31 +95,43 @@ class JobPosting extends Component {
            jobListing: removed
         })
     }
-
     render() {
 
         return (
             <div>
                 {this.state.jobListing.map(data => 
-                    <li key={data.id}>Name: {data.name}, Title: {data.title}, Address: {data.address}, Id: {data.id}
-                        <IconButton aria-label="Delete" onClick={()=> this.handleDelete(data)}>
+                    <Card>
+                        <CardActionArea>
+                            <CardContent>
+                                <Typography gutterBottom variant="headline" component="h2">
+                                    <Avatar src={default_picture} alt='Profile Picture' />
+                                    {data.title}
+                                </Typography>
+                                <Typography component="p">
+                                    <p>Name: {data.name}</p>
+                                    <p>Address: {data.address}</p>
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                        <CardActions>
+                            <Button size="small" color="primary">
+                            Share
+                            </Button>
+                            <Button size="small" color="primary">
+                            Edit
+                            </Button>
+                            <IconButton aria-label="Delete" onClick={()=> this.handleDelete(data)}>
                             <DeleteIcon fontSize="medium" />
-                        </IconButton>
-                    </li>
+                            </IconButton>
+                        </CardActions>
+                    </Card>
                 )}
-                {/* <form>
-                    <Input placeholder="Job Title" value={this.state.title} onChange={this.handleTitleChange} inputProps={{'aria-label': 'Description',}}
-                    ></Input>
-                    
-                    
-                    <Input  placeholder="Name" value={this.state.name} onChange={this.handleNameChange} inputProps={{'aria-label': 'Description',}}></Input>
-                    
-                    
-                    <Input  placeholder="Address" value={this.state.address} onChange={this.handleAddressChange} inputProps={{'aria-label': 'Description',}}></Input>
-                    
-                    <Button onClick={this.handleSubmit} variant="fab" color="primary" aria-label="Add"><AddIcon /></Button>
-                 </form> */}
-                <Button onClick={this.openDialog} variant="fab" color="primary" aria-label="Add"><AddIcon /></Button>
+                <Card>
+                    <CardActions>
+                        <Button onClick={this.openDialog} variant="fab" color="primary" aria-label="Add"><AddIcon /></Button>
+                    </CardActions>
+                </Card>
+                
                 <Dialog
                     open={this.state.form_dialog_open}
                     onClose={this.handleClose}
