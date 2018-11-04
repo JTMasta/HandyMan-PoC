@@ -27,7 +27,7 @@ export class HandyMan extends Component {
                             <p>Name: {this.props.handyMan.handyManName}</p>
                             <p>HandyMan Title: {this.props.handyMan.handyManTitle}</p>
                             <p>Description: {this.props.handyMan.body}</p>
-                            <p>Created at: {JSON.stringify(this.props.handyMan.dateCreated)}</p>
+                            <p>Created at: {this.props.handyMan.dateCreated}</p>
                         </Typography>
                         </CardContent>
                     </CardActionArea>
