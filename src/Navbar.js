@@ -99,7 +99,7 @@ class PrimarySearchAppBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            type: "handyman",
+            type: "customer",
             anchorEl: null,
             mobileMoreAnchorEl: null,
         };
@@ -182,9 +182,9 @@ class PrimarySearchAppBar extends React.Component {
                             <MenuIcon />
                         </IconButton>
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-                            <Link to="/" style={linkStyle}>
+                            <a href="/" style={linkStyle}>
                                 HandyMan
-                            </Link>
+                            </a>
                         </Typography>
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>
                             {this.state.type === "customer" ?
@@ -197,12 +197,12 @@ class PrimarySearchAppBar extends React.Component {
                             </Link>
                             }
                         </Typography>
+                        <div className={classes.grow} />
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>
                             <Link to="/registration" style={linkStyle}>
-                                Registration Page
+                                Register
                             </Link>
                         </Typography>
-                        <div className={classes.grow} />
                         <div
                             anchorEl={anchorEl}
                             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}

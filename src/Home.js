@@ -57,7 +57,7 @@ class Home extends Component {
         return (
             <div style={{textAlign: "center", fontSize: "50px" , paddingTop: "50px"}}>HandyMan Dashboard 
             <br /><br />
-            <img style={{width: "50%"}} src="/HandyManLogo.jpg" alt="text"></img>
+            <img style={{width: "50%"}} src="/HandyManLogo.jpg"></img>
             <br />
             <img style={{width: "25%"}} src={this.state.img}></img>
             <br />
