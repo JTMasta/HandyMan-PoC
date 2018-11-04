@@ -58,9 +58,11 @@ class Home extends Component {
             <div style={{textAlign: "center", fontSize: "50px" , paddingTop: "50px"}}>HandyMan Dashboard 
             <br /><br />
             <img style={{width: "50%"}} src="/HandyManLogo.jpg" alt="text"></img>
-            <img style={{width: "25%"}} src={this.state.img} alt="text"></img>
-            <Input onChange={(text) => this.onInputChange(text)} placeholder="URL" ></Input>
-            <Button onClick={() => this.onClickSubmit()}>INVOKE_API</Button>
+            <br />
+            <img style={{width: "25%"}} src={this.state.img}></img>
+            <br />
+            <Input onChange={(text) => this.onInputChange(text)} placeholder="Image URL" ></Input>
+            <Button onClick={() => this.onClickSubmit()}>Quick Search</Button>
             </div>
 
 

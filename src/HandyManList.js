@@ -12,10 +12,10 @@ class HandyManList extends Component {
                 { id:2, handyManName: 'Rameen', dateCreated: new Date(), handyManTitle: 'Software Engineer', body: 'React Dev.', email: 'RameenRastan@gmail.com'},
                 { id:3, handyManName: 'Jared', dateCreated: new Date(), handyManTitle: 'Coder', body: 'React Noob.', email: 'jaredWoo@live.ca'},
                 { id:4, handyManName: 'Wilson', dateCreated: new Date(), handyManTitle: 'Hacker', body: 'React noob', email: 'wilsonla@live.ca'},
-                { id:5, handyManName: 'car', dateCreated: new Date(), handyManTitle: 'carman', body: 'car noob', email: 'car@live.ca'}
+                { id:5, handyManName: 'Kevin', dateCreated: new Date(), handyManTitle: 'Rose Clipper', body: 'Local Florist', email: 'roses@live.ca'}
 
             ],
-            filterType: "name"
+            filterType: "title"
         };
         this.handleFilterSearch = this.handleFilterSearch.bind(this)
         this.handleFilterType = this.handleFilterType.bind(this);

@@ -197,6 +197,11 @@ class PrimarySearchAppBar extends React.Component {
                             </Link>
                             }
                         </Typography>
+                        <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+                            <Link to="/registration" style={linkStyle}>
+                                Registration Page
+                            </Link>
+                        </Typography>
                         <div className={classes.grow} />
                         <div
                             anchorEl={anchorEl}
