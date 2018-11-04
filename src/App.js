@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
-import HandyMan from './HandyMan'
+import HandyManList from './HandyManList';
+import Home from './Home';
 import TestComponent from './TestComponent'
 import JobPosting from './JobPosting'
 
@@ -16,7 +17,7 @@ const App = () => {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/topics">Topics</Link>
+          <Link to="/handymen">Handymen</Link>
         </li>
         <li>
           <Link to="/jobPosting">Job Postings</Link>
@@ -25,9 +26,10 @@ const App = () => {
 
       <hr />
 
-      <Route exact path="/" component={HandyMan} />
+      <Route exact path="/" component={Home} />
       <Route path="/about"  component={TestComponent}/>
       <Route path="/jobPosting" component={JobPosting}/>
+      <Route path="/handymen" component={HandyManList} />
       
     </div>
   </Router>
