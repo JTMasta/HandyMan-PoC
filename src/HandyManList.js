@@ -1,30 +1,27 @@
 import React, { Component } from 'react';
 import {HandyMan} from './HandyMan';
 
-const styles = {
-    card: {
-      maxWidth: 345,
-    },
-    media: {
-      height: 140,
-    },
-  };
-
 class HandyManList extends Component {
     constructor(props)
     {
         super(props)
         this.state = {
-            handyManList: [{handyManName: 'Owen', dateCreated: new Date(), handyManTitle: 'Network Engineer', body: 'Network Engineer and currently single.'},
-                            {handyManName: 'Rameen', dateCreated: new Date(2018, 11, 24, 10, 33, 30, 0), handyManTitle: 'Software Engineer', body: 'Network Engineer and currently single.'}]
-        }
+            handyManList: [
+                { id:1, handyManName: 'Owen', dateCreated: new Date(), handyManTitle: 'Network Engineer', body: 'Network Engineer and currently single.'},
+                { id:2, handyManName: 'Rameen', dateCreated: new Date(), handyManTitle: 'Software Engineer', body: 'React Dev.'},
+                { id:3, handyManName: 'Jared', dateCreated: new Date(), handyManTitle: 'Coder', body: 'React Noob.'},
+                { id:4, handyManName: 'Wilson', dateCreated: new Date(), handyManTitle: 'Hacker', body: 'React noob'}
+            ]
+        };
     }
     render() {
         return (
             <div>
             <h1>Available Handymen</h1>
                     {this.state.handyManList.map(handyman => (
-                            <HandyMan handyMan={handyman} />
+                            <div key={handyman.id}>
+                                <HandyMan handyMan={handyman} />
+                            </div>
                     ))}
             </div>
         )
