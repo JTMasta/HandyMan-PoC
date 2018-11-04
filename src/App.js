@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
+import Navbar from './Navbar'
+import TestComponent from './TestComponent'
+import {TextButtons} from './Navbar'
 import HandyManList from './HandyManList';
 import Home from './Home';
 import TestComponent from './TestComponent'
@@ -8,6 +11,9 @@ import JobPosting from './JobPosting'
 const App = () => {
   return ( 
     <Router>
+     <div>
+    
+      <Navbar />
     <div>
       <ul>
         <li>
