@@ -4,11 +4,13 @@ import Button from "@material-ui/core/Button";
 import CustomerRegistration from "./CustomerRegistration"
 import HandymanRegistration from "./HandymanRegistration"
 import { withStyles } from '@material-ui/core';
+import SubmitButton from './SubmitButton';
 
 const styles = theme => ({
     button: {
-        padding: "10px",
-        margin: "20px"
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        marginTop: 3 * theme.spacing.unit
     }
 });
 
@@ -32,29 +34,31 @@ class RegistrationForm extends Component {
     }
 
     render() {
-        const {classes} = this.props
+        const { classes } = this.props
         return (
             <div>
-                <Button onClick={this.swtichStateToCustomer} 
-                variant="contained" 
-                color="secondary" 
-                className={classes.button}>
+                <Button onClick={this.swtichStateToCustomer}
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}>
                     Customer
                 </Button>
-                
-                <Button onClick={this.swtichStateToHandyman} 
-                variant="contained" 
-                color="secondary"
-                className={classes.button} >
+
+                <Button onClick={this.swtichStateToHandyman}
+                    variant="contained"
+                    color="primary"
+                    className={classes.button} >
                     Handyman
                 </Button>
 
-                {this.state.type == "Customer" ? <CustomerRegistration /> : null}
-                {this.state.type == "Handyman" ? <HandymanRegistration /> : null}
+                {this.state.type == "Customer" ? <div> <CustomerRegistration /> <SubmitButton /> </div> : null}
+                {this.state.type == "Handyman" ? <div> <HandymanRegistration /> <SubmitButton /> </div> : null}
+
+                
             </div>
         );
     }
-  
+
 }
 RegistrationForm.propTypes = {
     classes: PropTypes.object.isRequired
