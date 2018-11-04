@@ -13,9 +13,10 @@ class HandyManList extends Component {
                 { id:3, handyManName: 'Jared', dateCreated: "6:35PM November 3, 2018", handyManTitle: 'Coder', body: 'React Noob.'},
                 { id:4, handyManName: 'Wilson', dateCreated: "6:25PM November 3, 2018", handyManTitle: 'Hacker', body: 'React noob'}
             ],
-            filterType: ""
+            filterType: "name"
         };
         this.handleFilterSearch = this.handleFilterSearch.bind(this)
+        this.handleFilterType = this.handleFilterType.bind(this);
     }
     handleFilterSearch(e) {
         console.log("test")
@@ -24,18 +25,28 @@ class HandyManList extends Component {
         })
     }
 
-    handleFilterType() {
-
+    handleFilterType(event) {
+        console.log(event.target.value);
+        this.setState({ filterType: event.target.value })
     }
 
     render() {
         const filteredList = this.state.handyManList.filter(handyman => {
-            return handyman.handyManName.toUpperCase().includes(this.state.searchString.toUpperCase())
+                switch(this.state.filterType) {
+                    case "name" :
+                    return handyman.handyManName.toUpperCase().includes(this.state.searchString.toUpperCase())
+                    case "title" :
+                    return handyman.handyManTitle.toUpperCase().includes(this.state.searchString.toUpperCase())
+                }
         })
         return (
             <div>
             <form>
                 <input id="filter" type="text" value={this.state.searchString} onChange={this.handleFilterSearch.bind(this)} />
+                <select onChange={this.handleFilterType} placeholder="Select a person" value={this.state.filterType} defaultValue={this.state.filterType}>
+                    <option value="name">HandyMan Name</option>
+                    <option value="title">HandyMan Title</option>
+                </select>
             </form>
             <h1>Available Handymen</h1>
                     {filteredList.map(handyman => (
