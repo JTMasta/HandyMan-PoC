@@ -5,7 +5,7 @@ import TestComponent from './TestComponent'
 import Registration from './Registration';
 import RegistrationForm from './Registration';
 import CustomerRegistration from './CustomerRegistration';
-import {TextButtons} from './Navbar'
+import { TextButtons } from './Navbar'
 import HandyManList from './HandyManList';
 import Home from './Home';
 import JobPosting from './JobPosting'
@@ -32,14 +32,15 @@ const theme = createMuiTheme({
 
 
 const App = () => {
-  return ( 
+  return (
     <MuiThemeProvider theme={theme}>
-      <Router> 
+      <Router>
         <div>
+          <link rel="stylesheet" type="text/css" href="/HandyManStyles.css" />
           <Navbar />
           <Route exact path="/" component={Home} />
-          <Route path="/about"  component={TestComponent}/>
-          <Route path="/jobPosting" component={JobPosting}/>
+          <Route path="/about" component={TestComponent} />
+          <Route path="/jobPosting" component={JobPosting} />
           <Route path="/handymen" component={HandyManList} />
           <Route path="/registration" component={RegistrationForm} />
         </div>

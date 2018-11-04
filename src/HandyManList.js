@@ -14,7 +14,7 @@ class HandyManList extends Component {
                 { id: 2, handyManName: 'Rameen', dateCreated: new Date(), handyManTitle: 'Software Engineer', body: 'React Dev.', email: 'RameenRastan@gmail.com', distance: 70 },
                 { id: 3, handyManName: 'Jared', dateCreated: new Date(), handyManTitle: 'Coder', body: 'React Noob.', email: 'jaredWoo@live.ca', distance: 100 },
                 { id: 4, handyManName: 'Wilson', dateCreated: new Date(), handyManTitle: 'Hacker', body: 'React noob', email: 'wilsonla@live.ca', distance: 50 },
-                { id:5, handyManName: 'Kevin', dateCreated: new Date(), handyManTitle: 'Rose Clipper', body: 'Local Florist', email: 'roses@live.ca'}
+                { id: 5, handyManName: 'Kevin', dateCreated: new Date(), handyManTitle: 'Rose Clipper', body: 'Local Florist', email: 'roses@live.ca'}
 
             ],
             filterType: "title"
@@ -53,24 +53,24 @@ class HandyManList extends Component {
             }
         })
         return (
-            <div>
+            <div className="container">
                 <form>
                     {this.state.filterType === "distance" ?
-                        <select onChange={this.handleChangeDistance.bind(this)} placeholder="Select a person" value={this.state.distance} defaultValue={this.state.distance}>
+                        <select style={{fontSize:"20px", paddingLeft:"15px", paddingTop:"100px"}} onChange={this.handleChangeDistance.bind(this)} placeholder="Select a person" value={this.state.distance} defaultValue={this.state.distance}>
                             <option value="50">50 km</option>
                             <option value="100">100 km</option>
                             <option value="500">500 km</option>
                         </select>
                         :
-                        <Input id="filter" type="text" value={this.state.searchString} onChange={this.handleFilterSearch.bind(this)} placeholder="Find HandyMan"></Input>
+                        <Input id="filter" type="text" style={{fontSize:"30px", paddingLeft:"15px", paddingTop:"15px"}} value={this.state.searchString} onChange={this.handleFilterSearch.bind(this)} placeholder="Find HandyMan"></Input>
                     }
-                    <select onChange={this.handleFilterType} placeholder="Select a person" value={this.state.filterType} defaultValue={this.state.filterType}>
+                    <select style={{fontSize:"20px", paddingLeft:"15px", paddingTop:"15px"}} onChange={this.handleFilterType} placeholder="Select a person" value={this.state.filterType} defaultValue={this.state.filterType}>
                         <option value="name">HandyMan Name</option>
                         <option value="title">HandyMan Title</option>
                         <option value="distance">HandyMan Distance</option>
                     </select>
                 </form>
-                <h1>Available Handymen</h1>
+                <h1 className="availablehandyman">Available Handymen</h1>
                 {filteredList.map(handyman => (
                     <div key={handyman.id}>
                         <HandyMan handyMan={handyman} />

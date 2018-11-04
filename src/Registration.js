@@ -10,7 +10,9 @@ const styles = theme => ({
     button: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        marginTop: 3 * theme.spacing.unit
+        marginTop: 3 * theme.spacing.unit,
+        width: 250,
+        height: 100
     }
 });
 
@@ -36,7 +38,7 @@ class RegistrationForm extends Component {
     render() {
         const { classes } = this.props
         return (
-            <div>
+            <div className="registrationbuttons">
                 <Button onClick={this.swtichStateToCustomer}
                     variant="contained"
                     color="primary"
